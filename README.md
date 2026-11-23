@@ -64,12 +64,57 @@ AABHA/
 
 ---
 
-## ☁️ AWS Deployment Architecture
+## ☁️ AWS Architecture Diagram
 
-This website is designed for **near-zero cost (< $1.00/month)** hosting on AWS:
-- **Amazon S3:** Static website bucket.
-- **Amazon CloudFront:** Edge CDN caching with free SSL encryption.
-- **AWS Free Tier:** Covers 1 TB bandwidth and 10 million requests monthly.
+```mermaid
+flowchart TD
+    subgraph ClientLayer ["1. Client & User Layer"]
+        User["Customer / Shopper (Mobile / Desktop)"]
+    end
+
+    subgraph EdgeLayer ["2. Global Edge & Security Layer"]
+        DNS["Domain DNS (Route 53 or External Registrar)"]
+        ACM["AWS Certificate Manager (Free SSL / TLS Certificate)"]
+        CF["Amazon CloudFront CDN (Global Edge Network)
+        - 450+ Points of Presence Worldwide
+        - HTTPS Enforced (TLS 1.2/1.3)
+        - Gzip & Brotli Content Compression
+        - Free Tier: 1 TB Outbound Transfer & 10M Requests/mo"]
+    end
+
+    subgraph StorageLayer ["3. Origin & Storage Layer (ap-south-1 Mumbai)"]
+        S3["Amazon S3 Static Website Bucket
+        Bucket: aabha-candles-713881796636
+        - index.html, styles.css, app.js
+        - WebP Candle Photos & Logo
+        - Cache-Control Headers"]
+    end
+
+    subgraph OrderLayer ["4. Checkout & Order Dispatch"]
+        WA["WhatsApp Business Concierge (+91 6290840963)
+        - Pre-formatted Itemized Order
+        - Custom Bead Text & Scent Choices
+        - Delivery City & Calculated Total"]
+    end
+
+    User -->|"1. Accesses Website"| DNS
+    DNS -->|"2. Routes to CloudFront Anycast IP"| CF
+    ACM -.->|"Provides SSL / HTTPS"| CF
+    CF -->|"3. Cache Miss: Fetches from S3 Origin"| S3
+    S3 -->|"4. Returns Static Assets"| CF
+    CF -->|"5. Blazing Fast Delivery (<50ms)"| User
+    User -->|"6. Clicks Order via WhatsApp"| WA
+```
+
+### Architectural Highlights & Cost Analysis
+
+| Component | Service | Role | Monthly Cost |
+|---|---|---|---|
+| **Edge CDN** | **Amazon CloudFront** | Delivers pages globally from nearest edge locations with SSL encryption | **$0.00** *(1 TB transfer & 10M requests free in AWS Free Tier)* |
+| **Object Storage** | **Amazon S3** (`ap-south-1`) | Hosts compiled static files, WebP candle photos, and logo assets | **<$0.02** *(Pennies for ~15 MB storage)* |
+| **Security & SSL** | **AWS Certificate Manager** | Managed public SSL/TLS certificate with automatic renewal | **$0.00** *(100% Free with CloudFront)* |
+| **Ordering Engine** | **WhatsApp Direct API** | Frictionless client-side order formatting and messaging | **$0.00** *(No backend server required)* |
+| **Total Estimated Cost** | — | — | **Virtually ₹0 to ₹10 / month (< $0.10)** |
 
 ---
 
