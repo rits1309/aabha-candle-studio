@@ -86,7 +86,8 @@ const PRODUCTS = [
       heart: 'Aqua Marine & Blue Agave',
       base: 'Crisp Linen & Amber'
     },
-    customizable: false
+    customizable: true,
+    customPrompt: 'Custom seashell selection or personalized gift tag?'
   },
   {
     id: 'amour-petals-jar',
@@ -127,7 +128,8 @@ const PRODUCTS = [
       heart: 'Sunflower Petals & Mimosa',
       base: 'Golden Amber & Woods'
     },
-    customizable: false
+    customizable: true,
+    customPrompt: 'Custom wax color tone (Yellow, Orange, Ivory) or gift card note:'
   },
   {
     id: 'truffle-elegance',
@@ -147,7 +149,8 @@ const PRODUCTS = [
       heart: 'Roasted Hazelnut & Caramel Cream',
       base: 'Madagascar Vanilla Bean'
     },
-    customizable: false
+    customizable: true,
+    customPrompt: 'Custom aroma or gift box ribbon color:'
   },
   {
     id: 'ivory-rose-sculpture',
@@ -167,7 +170,8 @@ const PRODUCTS = [
       heart: 'Bulgarian Rose & Gardenia',
       base: 'Powdery White Musk'
     },
-    customizable: false
+    customizable: true,
+    customPrompt: 'Custom petal shade (Ivory / Blush Pink / Crimson) or gift card message:'
   },
   {
     id: 'twilight-radiance-glow',
@@ -187,7 +191,8 @@ const PRODUCTS = [
       heart: 'Night Orchid & Violet',
       base: 'Smoky Oak & Patchouli'
     },
-    customizable: false
+    customizable: true,
+    customPrompt: 'Custom color tone or personalized gift tag note:'
   },
   {
     id: 'aabha-signature-hamper',
@@ -332,6 +337,13 @@ function renderProducts() {
             </span>
           ` : ''}
 
+          <!-- Customization Available Badge -->
+          ${p.customizable ? `
+            <span class="absolute top-3 right-3 bg-[#23201D]/90 backdrop-blur-md text-[#E2CA92] border border-[#B86B49]/40 text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+              ✨ Custom
+            </span>
+          ` : ''}
+
           <!-- Quick View Pill -->
           <button 
             onclick="event.stopPropagation(); openQuickView('${p.id}')"
@@ -358,11 +370,17 @@ function renderProducts() {
             ${p.description}
           </p>
 
-          <!-- Scent tags -->
+          <!-- Scent & Customization tags -->
           <div class="flex flex-wrap gap-1.5 mb-4">
             <span class="text-[11px] bg-[#F4EFEA] text-[#716B64] px-2 py-0.5 rounded-md border border-[#EAE3DB]">
               ${p.scentNotes.heart}
             </span>
+            ${p.customizable ? `
+              <span class="text-[10px] bg-[#B86B49]/10 text-[#B86B49] font-semibold px-2 py-0.5 rounded-md border border-[#B86B49]/30 flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-3 h-3 text-[#D97736]"></i>
+                Customization Available
+              </span>
+            ` : ''}
           </div>
         </div>
       </div>

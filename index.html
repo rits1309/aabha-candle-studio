@@ -64,11 +64,12 @@
 <body class="bg-[#FDFBF7] text-[#23201D] font-sans antialiased selection:bg-[#B86B49] selection:text-white">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-[#23201D] text-[#FAF7F2] text-xs py-2 px-4 text-center tracking-widest uppercase border-b border-[#3D3833] flex items-center justify-center gap-2">
-    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#D97736] animate-pulse"></span>
-    <span>Complimentary personalized handwritten gift tags on all custom orders</span>
+  <div class="bg-[#23201D] text-[#FAF7F2] text-xs py-2.5 px-4 text-center tracking-widest uppercase border-b border-[#3D3833] flex items-center justify-center gap-2 flex-wrap">
+    <span class="inline-block w-2 h-2 rounded-full bg-[#D97736] animate-pulse"></span>
+    <span class="font-bold text-[#E2CA92]">✨ 100% Customization Available</span>
+    <span class="text-[#FAF7F2]">on Names, Scents, Colors & Gift Tags</span>
     <span class="hidden md:inline text-[#716B64]">|</span>
-    <span class="hidden md:inline text-[#D5CABE]">Hand-Poured with Intention in India</span>
+    <span class="hidden md:inline text-[#D5CABE]">Hand-Poured with Love in India</span>
   </div>
 
   <!-- Main Navigation Bar -->
@@ -134,9 +135,9 @@
         <!-- Left Content -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF7F2] border border-[#EAE3DB] text-[11px] uppercase tracking-widest text-[#B86B49] font-medium shadow-sm">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF7F2] border-2 border-[#B86B49] text-xs uppercase tracking-widest text-[#B86B49] font-bold shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#D97736] animate-pulse"></span>
-            Artisanal Hand-Poured Candles
+            ✨ Customization is Available on All Creations
           </div>
 
           <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#23201D] font-normal leading-[1.15]">
@@ -174,9 +175,9 @@
               <p class="font-serif text-lg font-semibold text-[#23201D]">100%</p>
               <p class="text-[11px] text-[#716B64] uppercase tracking-wider">Natural Soy & Wax</p>
             </div>
-            <div>
-              <p class="font-serif text-lg font-semibold text-[#23201D]">Bespoke</p>
-              <p class="text-[11px] text-[#716B64] uppercase tracking-wider">Floating Bead Names</p>
+            <div class="bg-white/80 p-2.5 rounded-xl border border-[#B86B49]/40 shadow-sm">
+              <p class="font-serif text-lg font-semibold text-[#B86B49]">✨ Custom</p>
+              <p class="text-[11px] text-[#23201D] uppercase font-bold tracking-wider">Customization Available</p>
             </div>
             <div>
               <p class="font-serif text-lg font-semibold text-[#23201D]">Zero Toxins</p>
@@ -267,6 +268,37 @@
           />
           <i data-lucide="search" class="w-4 h-4 text-[#716B64] absolute left-3.5 top-1/2 -translate-y-1/2"></i>
         </div>
+      </div>
+
+      <!-- ✨ High-Impact Customization Highlight Banner -->
+      <div class="mb-10 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-[#F4EFEA] via-[#FFFDF9] to-[#F4EFEA] border-2 border-[#B86B49] shadow-md flex flex-col md:flex-row items-center justify-between gap-5">
+        <div class="flex items-center gap-4 text-center md:text-left">
+          <div class="w-12 h-12 rounded-2xl bg-[#B86B49] text-white flex items-center justify-center flex-shrink-0 shadow-md">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 justify-center md:justify-start flex-wrap">
+              <span class="bg-[#23201D] text-[#E2CA92] text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-full font-bold">
+                Bespoke Studio
+              </span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#23201D]">
+                ✨ Customization is Available on All Candles!
+              </h3>
+            </div>
+            <p class="text-xs sm:text-sm text-[#716B64] mt-1 max-w-2xl leading-relaxed">
+              Personalize with <strong>floating letter beads</strong> (names, dates, or messages like <em>"Pyari Behna"</em> or <em>"Bestie"</em>), custom fragrance choices, candle colors, or handwritten gift tag notes.
+            </p>
+          </div>
+        </div>
+
+        <a 
+          href="https://wa.me/916290840963?text=Hi%20AABHA!%20I%20would%20like%20to%20customize%20a%20candle%20with%20a%20personal%20name%20and%20scent." 
+          target="_blank" 
+          class="px-6 py-3 bg-[#B86B49] hover:bg-[#23201D] text-white text-xs uppercase tracking-widest font-bold rounded-full transition shadow-md whitespace-nowrap flex items-center gap-2 flex-shrink-0"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
+          <span>Customize via WhatsApp</span>
+        </a>
       </div>
 
       <!-- Category Filter Tabs -->
@@ -676,7 +708,11 @@
           </div>
 
           <!-- Customization Input Section -->
-          <div id="modal-custom-section" class="hidden space-y-1 pt-1">
+          <div id="modal-custom-section" class="hidden space-y-2 pt-2 p-3.5 bg-[#FAF7F2] rounded-xl border-2 border-[#B86B49]/50">
+            <div class="flex items-center gap-1.5 text-[#B86B49] text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>✨ Customization is Available</span>
+            </div>
             <label id="modal-custom-label" for="modal-custom-input" class="block text-xs font-semibold text-[#23201D]"></label>
             <input 
               type="text" 
@@ -684,6 +720,7 @@
               placeholder="e.g. Pyari Behna, Mom, Love you, initials..." 
               class="w-full px-3 py-2 text-xs rounded-lg border border-[#D5CABE] bg-white focus:outline-none focus:border-[#B86B49]"
             />
+            <p class="text-[10px] text-[#716B64] italic">Your custom text will be hand-placed in floating beads or on the gift card.</p>
           </div>
         </div>
 
