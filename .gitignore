@@ -1,0 +1,17 @@
+# Environment variables & secrets
+.env
+.env.*
+*.pem
+*.key
+credentials
+secrets.json
+
+# Raw source photos & videos (~150MB, not needed for web repo)
+assets/raw_photos/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

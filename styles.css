@@ -1,0 +1,115 @@
+/* AABHA - Handcrafted Luxury Candle Studio */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-cream: #FAF7F2;
+  --color-cream-light: #FDFBF7;
+  --color-stone: #F4EFEA;
+  --color-sand: #EAE3DB;
+  --color-charcoal: #23201D;
+  --color-charcoal-light: #3D3833;
+  --color-soft-gray: #716B64;
+  --color-terracotta: #B86B49;
+  --color-amber: #D97736;
+  --color-gold: #C5A059;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-light);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFEA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5CABE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B86B49;
+}
+
+/* Subtle Ambient Glow Animations */
+@keyframes flameFlicker {
+  0%, 100% {
+    opacity: 0.92;
+    transform: scale(1);
+    filter: drop-shadow(0 0 16px rgba(217, 119, 54, 0.45));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 24px rgba(217, 119, 54, 0.65));
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 3.5s ease-in-out infinite;
+}
+
+/* Candle Glow Backdrop */
+.glow-backdrop {
+  background: radial-gradient(circle at 50% 30%, rgba(217, 119, 54, 0.12) 0%, rgba(197, 160, 89, 0.05) 45%, transparent 70%);
+}
+
+.dark-glow-backdrop {
+  background: radial-gradient(circle at 50% 40%, rgba(217, 119, 54, 0.18) 0%, rgba(35, 32, 29, 0.95) 75%);
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(253, 251, 247, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(234, 227, 219, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(234, 227, 219, 0.9);
+}
+
+/* Product Card Image Zoom */
+.product-card .card-img-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .card-img-container img {
+  transform: scale(1.05);
+}
+
+/* Smooth modal fade */
+.modal-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: #B86B49;
+  color: #FFFFFF;
+}
