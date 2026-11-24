@@ -116,8 +116,8 @@ const PRODUCTS = [
     tagline: 'Botanical Wax Art Candle',
     category: 'sculptures',
     categoryName: 'Artisan Sculptures',
-    price: 249,
-    originalPrice: 299,
+    price: 29,
+    originalPrice: 49,
     badge: 'New',
     image: 'assets/processed/soleil_sunflower.webp',
     description: 'A burst of sunshine for your mantle. Intricately molded with layered sunny yellow petals and textured cocoa-colored florets, bringing warm radiant energy to any room.',
@@ -158,8 +158,8 @@ const PRODUCTS = [
     tagline: 'Cocktail Ambient Gel Glass',
     category: 'gels',
     categoryName: 'Marine & Ambient Gels',
-    price: 479,
-    originalPrice: 549,
+    price: 299,
+    originalPrice: 399,
     badge: 'Evening Glow',
     image: 'assets/processed/twilight_radiance_glow.webp',
     description: 'Layered violet-magenta gel candle in crystal drinkware adorned with the official AABHA logo medallion. Illuminates with a hypnotic warm glow that casts gentle shadows across your room.',
@@ -179,11 +179,12 @@ const PRODUCTS = [
     tagline: 'Handcrafted Packaging with Satin & Tulle',
     category: 'hampers',
     categoryName: 'Gift Curation & Hampers',
-    price: 1899,
-    originalPrice: 2299,
-    badge: 'Ready to Gift',
+    price: 399,
+    pricePrefix: 'Starting from ',
+    originalPrice: null,
+    badge: 'Customisable',
     image: 'assets/processed/aabha_signature_hamper.webp',
-    description: 'A curated bespoke gifting hamper enveloped in bridal net tulle, tied with a vibrant magenta satin bow, personalized kraft tag ("Handcrafted with Love"), and the AABHA wax seal. Includes your choice of 1 large bowl or 3 assorted botanical candles.',
+    description: 'A curated bespoke gifting hamper enveloped in bridal net tulle, tied with a vibrant magenta satin bow, personalized kraft tag ("Handcrafted with Love"), and the AABHA wax seal. Fully customizable with your choice of candle assortments.',
     wax: 'Custom Selection',
     burnTime: '40+ Hours Combined',
     scentNotes: {
@@ -367,6 +368,7 @@ function renderProducts() {
       <!-- Footer & Action -->
       <div class="px-5 pb-5 pt-3 border-t border-[#EAE3DB]/60 flex items-center justify-between">
         <div>
+          ${p.pricePrefix ? `<span class="text-[11px] text-[#716B64] block leading-tight font-sans">${p.pricePrefix}</span>` : ''}
           <span class="text-lg font-serif font-semibold text-[#23201D]">₹${p.price}</span>
           ${p.originalPrice ? `
             <span class="text-xs text-[#716B64] line-through ml-1.5">₹${p.originalPrice}</span>
@@ -423,7 +425,7 @@ function openQuickView(productId) {
   document.getElementById('modal-category').innerText = product.categoryName;
   document.getElementById('modal-title').innerText = product.name;
   document.getElementById('modal-tagline').innerText = product.tagline;
-  document.getElementById('modal-price').innerText = `₹${product.price}`;
+  document.getElementById('modal-price').innerText = `${product.pricePrefix || ''}₹${product.price}`;
   document.getElementById('modal-original-price').innerText = product.originalPrice ? `₹${product.originalPrice}` : '';
   document.getElementById('modal-description').innerText = product.description;
   document.getElementById('modal-wax').innerText = product.wax;
