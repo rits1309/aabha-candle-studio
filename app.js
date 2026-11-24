@@ -137,8 +137,8 @@ const PRODUCTS = [
     tagline: 'Gourmand Chocolate Gift Box Candle',
     category: 'gourmand',
     categoryName: 'Gourmand Specials',
-    price: 499,
-    originalPrice: 599,
+    price: 219,
+    originalPrice: 299,
     badge: 'Sweet Aroma',
     image: 'assets/processed/truffle_elegance.webp',
     description: 'Indulgent artisanal chocolate gift-box candles topped with translucent frosted wax bows and a sprinkle of festive copper glitter. Smells like a luxury European confectionary.',
@@ -151,27 +151,6 @@ const PRODUCTS = [
     },
     customizable: true,
     customPrompt: 'Custom aroma or gift box ribbon color:'
-  },
-  {
-    id: 'ivory-rose-sculpture',
-    name: 'Ivory Rose Symphony',
-    tagline: 'Sculptural Full Bloom Garden Rose',
-    category: 'sculptures',
-    categoryName: 'Artisan Sculptures',
-    price: 329,
-    originalPrice: 399,
-    badge: 'Classic',
-    image: 'assets/processed/ivory_rose_sculpture.webp',
-    description: 'A realistic blooming English garden rose hand-cast in creamy ivory wax with gentle swirling petals. An understated, timeless decorative piece whether unlit or burning.',
-    wax: 'Natural Soy Pillar Wax',
-    burnTime: '10-12 Hours',
-    scentNotes: {
-      top: 'Fresh Cut Green Leaves',
-      heart: 'Bulgarian Rose & Gardenia',
-      base: 'Powdery White Musk'
-    },
-    customizable: true,
-    customPrompt: 'Custom petal shade (Ivory / Blush Pink / Crimson) or gift card message:'
   },
   {
     id: 'twilight-radiance-glow',

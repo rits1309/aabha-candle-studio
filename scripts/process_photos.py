@@ -47,7 +47,7 @@ configs = [
     {
         'src': 'PXL_20260801_185551397.jpg',
         'dst': 'soleil_sunflower.webp',
-        'box': (500, 100, 2700, 2100),
+        'box': (1700, 200, 3140, 2000),
         'contrast': 1.12,
         'color': 1.08,
         'brightness': 1.05
