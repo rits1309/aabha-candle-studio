@@ -66,6 +66,8 @@ AABHA/
 
 ## ☁️ AWS Architecture Diagram
 
+![AABHA AWS Static Website Hosting Architecture](assets/docs/aws-architecture.png)
+
 ```mermaid
 flowchart TD
     subgraph ClientLayer ["1. Client & User Layer"]

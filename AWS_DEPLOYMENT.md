@@ -17,6 +17,8 @@ This guide explains how to host the **AABHA** handmade candle website on **Amazo
 
 ### 1. Architecture Overview & Diagram
 
+![AABHA AWS Static Website Hosting Architecture](assets/docs/aws-architecture.png)
+
 ```mermaid
 flowchart TD
     subgraph ClientLayer ["1. Client & User Layer"]
