@@ -115,7 +115,7 @@ for local_file, s3_key, content_type in files_to_upload:
             s3_key,
             ExtraArgs={
                 "ContentType": content_type,
-                "CacheControl": "max-age=86400" if not s3_key.endswith(".html") else "no-cache"
+                "CacheControl": "no-cache, no-store, must-revalidate" if s3_key.endswith((".html", ".js", ".css")) else "max-age=86400"
             }
         )
     else:
